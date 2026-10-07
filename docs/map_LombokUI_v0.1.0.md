@@ -17,6 +17,23 @@ dependensi opsional : (tidak ada yang diimpor; integrasi lewat markup dan messag
 dependensi dev      : typescript, @types/node, jsdom, @types/jsdom (TS); unittest bawaan Python
 ```
 
+### 1.1 Kebijakan dependensi dan salinan kode
+
+Berlaku untuk LombokUI dan setiap library baru di bagian 3:
+
+1. **Mandiri dan kuat.** Library MUST dapat dipasang dan dipakai sendiri, lulus seluruh vector-nya sendiri, dan tidak bergantung pada library di luar Lombok Ecosystem saat runtime.
+2. **Dependensi hanya dari Lombok Ecosystem.** Dependensi runtime MAY ditambahkan bila berasal dari Lombok Ecosystem dan sudah terbit di registry (bukan `file:`, `link:`, atau path ke repo lain). Dependensi pihak ketiga hanya boleh sebagai dev-dependency.
+3. **Salinan kode (vendoring) diizinkan.** Kode dari library Lombok MAY disalin ke dalam library ini bila dependensi penuh terlalu berat atau belum terbit, dengan syarat: (a) salinan ditaruh di modul tersendiri dan diberi kepala berkas yang mencatat repo asal, versi, commit, dan lisensi; (b) salinan dicatat di tabel 1.2; (c) kasus vector library asal yang relevan ikut dijalankan untuk membuktikan perilaku salinan tetap sama; (d) perbaikan dilakukan di library asal dulu, lalu disalin ulang.
+4. **Pilihan per kasus.** Untuk setiap library Lombok yang dibutuhkan, pilihannya adalah kontrak markup (seperti LombokCSS dan LombokIcons pada 0.1.0), salinan kode, atau dependensi registry, dan pilihan itu dicatat di tabel bagian 2.
+
+### 1.2 Kode salinan
+
+| Modul | Asal | Versi/commit | Lisensi | Bukti kesetaraan |
+|---|---|---|---|---|
+| (belum ada pada 0.1.0) | - | - | - | - |
+
+Kandidat salinan pertama: data path ikon `x` dan `chevron-down` dari LombokIcons agar `render` dapat menulis SVG langsung tanpa JavaScript, dan `direction(tag)` dari LombokLocale setelah API tersebut tersedia.
+
 ## 2. Library yang dibutuhkan LombokUI: yang sudah ada
 
 Status diambil dari isi repo pada 2026-10-07. "Selaras v3.6" berarti repo memuat 10 dokumen publik, SPEC normatif, vector, dan `lombok-doctor`.
@@ -49,7 +66,7 @@ Setiap usulan di bawah bersifat mandiri, murni (tanpa I/O, jam dan keacakan dari
 | LombokForm | L1 (LombokValidator, LombokLocale) | State form (dirty, touched, submit), field array, pemetaan constraint validation | Form yang memakai `field` | Belum ada | Aplikasi web dan server |
 | LombokMachine | L0 | Runtime statechart deterministik (subset SCXML) dengan vector | Logika aplikasi di luar komponen; ekspresi ulang mesin LombokUI secara deklaratif | Belum ada; mesin LombokUI 0.1.0 ditulis tangan | Alur kerja, wizard |
 
-Urutan ekstraksi yang disarankan: LombokPosition (paling matang), LombokFocus, LombokTokens, lalu yang lain sesuai kebutuhan komponen 0.2 dan 0.3 (`development_ide_` bagian 1). Setelah ekstraksi, LombokUI bergantung pada library tersebut dan naik resmi ke L1.
+Urutan ekstraksi yang disarankan: LombokPosition (paling matang), LombokFocus, LombokTokens, lalu yang lain sesuai kebutuhan komponen 0.2 dan 0.3 (`development_ide_` bagian 1). Setelah ekstraksi, LombokUI memakai library tersebut sebagai dependensi registry atau sebagai salinan kode menurut bagian 1.1, lalu naik resmi ke L1.
 
 ## 4. Contoh dependen di ekosistem
 

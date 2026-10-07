@@ -16,7 +16,7 @@ Lihat SPEC bagian 12 (Non-goals) dan README (Batasan).
 ## 3. Prinsip desain kontributor
 
 - Kontrak dulu, test dulu; semua port lulus vector yang sama dan string `render` identik byte demi byte.
-- Tidak ada dependensi runtime; dev-dependency dicatat di `map_`.
+- Dependensi runtime hanya dari Lombok Ecosystem; kode library Lombok boleh disalin dengan pencatatan asal dan bukti vector (`map_` bagian 1.1). Dev-dependency dicatat di `map_`.
 - Fungsi inti murni: jam, keacakan, ukuran elemen, dan I/O dipasok pemanggil.
 - Setiap perilaku keyboard mengikuti pola WAI-ARIA APG dan dicakup kasus golden.
 - Adapter tidak menambah semantik; semua keputusan ada di mesin.

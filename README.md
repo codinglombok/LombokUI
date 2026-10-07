@@ -103,7 +103,7 @@ WAI-ARIA 1.2, pola WAI-ARIA APG, WCAG 2.2 (2.1.1, 2.4.3, 2.4.7, 4.1.2, 4.1.3), n
 
 ## Ekosistem Lombok
 
-LombokUI tidak mengimpor library Lombok lain. Markup memakai nama kelas LombokCSS dan atribut ikon LombokIcons, dan `messageId` dapat di-resolve dengan LombokLocale. Peta lengkap, termasuk library yang masih perlu dibuat, ada di `docs/map_LombokUI_v0.1.0.md`.
+LombokUI 0.1.0 tidak mengimpor library Lombok lain. Kebijakannya: dependensi runtime hanya dari Lombok Ecosystem, dan kode library Lombok boleh disalin dengan pencatatan asal dan bukti vector (`docs/map_LombokUI_v0.1.0.md` bagian 1.1). Markup memakai nama kelas LombokCSS dan atribut ikon LombokIcons, dan `messageId` dapat di-resolve dengan LombokLocale. Peta lengkap, termasuk library yang masih perlu dibuat, ada di `docs/map_LombokUI_v0.1.0.md`.
 
 ## Contributing
 
