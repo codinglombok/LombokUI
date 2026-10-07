@@ -10,6 +10,10 @@ Berlaku untuk semua repo library Lombok Ecosystem.
 4. Jangan membuat `main`, me-rebase, atau force-push untuk menggantikan langkah 2.
 5. Berkas `CLAUDE.md` ini disalin ke repo library lain **saat repo itu dikerjakan** (per pengerjaan repo), bukan sekaligus ke semua repo.
 
+## Privasi
+
+- Jangan pernah mencantumkan tautan sesi chat (misalnya `claude.ai/code/session_...`) atau baris `Claude-Session:` di commit, PR, komentar, issue, maupun berkas repo. Sesi chat bersifat privat.
+
 ## Dependensi
 
 - Library harus mandiri dan kuat; dependensi runtime hanya dari Lombok Ecosystem dan sudah terbit di registry.
