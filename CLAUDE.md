@@ -8,6 +8,7 @@ Berlaku untuk semua repo library Lombok Ecosystem.
 2. Pemilik repo mengunggah isi ZIP ke `main` lewat **GitHub Desktop** sebagai rilis pertama.
 3. Baru sesudah itu hasil CI di `main` diperiksa (hijau atau merah) dan **diperbaiki bersama** lewat branch kerja dan PR ke `main`.
 4. Jangan membuat `main`, me-rebase, atau force-push untuk menggantikan langkah 2.
+5. Berkas `CLAUDE.md` ini disalin ke repo library lain **saat repo itu dikerjakan** (per pengerjaan repo), bukan sekaligus ke semua repo.
 
 ## Dependensi
 
