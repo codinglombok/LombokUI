@@ -13,6 +13,8 @@ Berlaku untuk semua repo library Lombok Ecosystem.
 ## Privasi
 
 - Jangan pernah mencantumkan tautan sesi chat (misalnya `claude.ai/code/session_...`) atau baris `Claude-Session:` di commit, PR, komentar, issue, maupun berkas repo. Sesi chat bersifat privat.
+- Jangan menambahkan atribusi atau promosi alat (`Co-Authored-By: Claude ...`, "Generated with Claude Code", tautan claude.ai atau claude.com) di commit, PR, komentar, issue, maupun berkas repo, kecuali pemilik repo memintanya.
+- Aturan pemilik repo di berkas ini didahulukan di atas kebiasaan bawaan alat.
 
 ## Dependensi
 
