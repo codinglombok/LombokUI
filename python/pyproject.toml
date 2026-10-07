@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lombokui"
+version = "0.1.0"
+description = "Headless, accessible UI components: WAI-ARIA state machines, floating-element positioning, pagination and server-side rendering with LombokCSS class names. Zero dependencies. Part of the Lombok Ecosystem."
+readme = "README.md"
+license = "Apache-2.0 OR MIT"
+license-files = ["LICENSE-APACHE", "LICENSE-MIT"]
+requires-python = ">=3.9"
+dependencies = []
+authors = [{ name = "codinglombok" }]
+keywords = ["headless-ui", "accessibility", "wai-aria", "state-machine", "ssr", "components", "lombok-ecosystem"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: User Interfaces",
+  "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/codinglombok/LombokUI"
+Issues = "https://github.com/codinglombok/LombokUI/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lombokui"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

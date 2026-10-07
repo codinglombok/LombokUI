@@ -1,0 +1,11 @@
+{
+  "lombokui.error.invalid_component": "The component name is unknown.",
+  "lombokui.error.invalid_option": "A component option or function argument is invalid.",
+  "lombokui.error.invalid_event": "The event is invalid for this component.",
+  "lombokui.error.invalid_props": "A render property is invalid.",
+  "lombokui.label.close": "Close",
+  "lombokui.label.breadcrumb": "Breadcrumb",
+  "lombokui.label.pagination": "Pagination",
+  "lombokui.label.previous_page": "Previous page",
+  "lombokui.label.next_page": "Next page"
+}

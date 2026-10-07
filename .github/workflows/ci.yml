@@ -1,0 +1,63 @@
+# Mandiri sementara (TD-02/TD-P0-08): ganti dengan pemanggil lombok-ci.yml dari codinglombok/.github
+# dan pin setiap action ke SHA sebelum rilis pertama.
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  typescript:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm ci
+        working-directory: typescript
+      - run: npm run typecheck
+        working-directory: typescript
+      - run: npm test
+        working-directory: typescript
+      - run: npm pack --dry-run
+        working-directory: typescript
+  python:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ["3.9", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m unittest discover -s tests -v
+        working-directory: python
+      - name: wheel builds and installs
+        run: python -m pip install build && python -m build && python -m pip install dist/*.whl && python -c "import lombokui; print(lombokui.VERSION)"
+        working-directory: python
+        shell: bash
+  vectors:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci && npm run build
+        working-directory: typescript
+      - name: vectors are reproducible from the generator
+        run: node scripts/gen-vectors.mjs && git diff --exit-code vectors/
+      - name: mutation test
+        run: node scripts/mutation-test.mjs
+      - name: lombok doctor
+        run: bash scripts/lombok-doctor.sh LombokUI

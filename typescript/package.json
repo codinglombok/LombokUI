@@ -1,0 +1,70 @@
+{
+  "name": "lombokui",
+  "version": "0.1.0",
+  "description": "Headless, accessible UI components: WAI-ARIA state machines, floating-element positioning, pagination, server-side rendering with LombokCSS class names, and a DOM adapter. Zero runtime dependencies. Part of the Lombok Ecosystem.",
+  "license": "Apache-2.0 OR MIT",
+  "author": "codinglombok",
+  "type": "module",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
+    },
+    "./dom": {
+      "types": "./dist/src/dom.d.ts",
+      "import": "./dist/src/dom.js"
+    },
+    "./locales/*": "./locales/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/src",
+    "locales",
+    "README.md",
+    "LICENSE-APACHE",
+    "LICENSE-MIT"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\" && tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node run-tests.mjs",
+    "prepack": "node -e \"const fs=require('node:fs');for(const f of ['README.md','LICENSE-APACHE','LICENSE-MIT'])fs.copyFileSync('../'+f,f);fs.cpSync('../locales','locales',{recursive:true})\"",
+    "postpack": "node -e \"const fs=require('node:fs');for(const f of ['README.md','LICENSE-APACHE','LICENSE-MIT'])fs.rmSync(f,{force:true});fs.rmSync('locales',{recursive:true,force:true})\""
+  },
+  "keywords": [
+    "headless-ui",
+    "accessibility",
+    "wai-aria",
+    "state-machine",
+    "ssr",
+    "positioning",
+    "components",
+    "zero-dependency",
+    "lombok-ecosystem"
+  ],
+  "homepage": "https://github.com/codinglombok/LombokUI",
+  "bugs": {
+    "url": "https://github.com/codinglombok/LombokUI/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codinglombok/LombokUI.git",
+    "directory": "typescript"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "jsdom": "^27.4.0",
+    "@types/jsdom": "^27.0.0",
+    "typescript": "^5.9.3"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
