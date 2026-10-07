@@ -4,7 +4,7 @@ Format: ID, temuan, prioritas, perbaikan, status. Prioritas P1 memblokir rilis m
 
 | ID | Temuan | Prioritas | Perbaikan | Status |
 |---|---|---|---|---|
-| TD-01 | `ci.yml` belum pernah dijalankan di GitHub Actions; action belum di-pin SHA | P0 | Jalankan di repo, pin SHA, aktifkan Dependabot | OPEN |
+| TD-01 | Action di `ci.yml` belum di-pin SHA; Dependabot belum dikonfigurasi untuk npm dan pip | P0 | Pin SHA, tambah `dependabot.yml` | OPEN |
 | TD-02 | Reusable workflow `codinglombok/.github` belum ada (TD-P0-08 ekosistem); doctor dijalankan dari salinan `scripts/lombok-doctor.sh` yang diperluas agar membaca SPDX dari `typescript/package.json` dan `python/pyproject.toml` | P0 | Pakai workflow bersama setelah tersedia dan usulkan perluasan yang sama ke skrip induk | OPEN |
 | TD-03 | Adapter DOM hanya diuji di jsdom; belum di browser nyata dan pembaca layar | P0 | Test Playwright lintas browser dan uji manual NVDA/VoiceOver | OPEN |
 | TD-04 | Coverage belum diukur; target 90% | P1 | Job coverage TypeScript (`c8`) dan Python (`coverage`) | OPEN |
@@ -16,4 +16,4 @@ Format: ID, temuan, prioritas, perbaikan, status. Prioritas P1 memblokir rilis m
 | TD-10 | Kinerja belum diukur (daftar 1000 item, render besar) | P2 | Benchmark sederhana per port | OPEN |
 | TD-11 | Pelipatan huruf hanya ASCII | P2 | Pakai LombokLocale setelah API tersedia | OPEN |
 
-Sudah ditutup di 0.1.0: 37 mutan pada inti TypeScript terbunuh oleh vector; tidak ada karakter non-ASCII pada berkas teks yang dilacak.
+Sudah ditutup di 0.1.0: CI dijalankan pertama kali di `main` (commit `c8b4310`) dan 13 dari 13 job hijau; 37 mutan pada inti TypeScript terbunuh oleh vector; tidak ada karakter non-ASCII pada berkas teks yang dilacak.
