@@ -1,0 +1,11 @@
+{
+  "lombokui.error.invalid_component": "Nama komponen tidak dikenal.",
+  "lombokui.error.invalid_option": "Opsi komponen atau argumen fungsi tidak sah.",
+  "lombokui.error.invalid_event": "Event tidak sah untuk komponen ini.",
+  "lombokui.error.invalid_props": "Properti render tidak sah.",
+  "lombokui.label.close": "Tutup",
+  "lombokui.label.breadcrumb": "Jejak navigasi",
+  "lombokui.label.pagination": "Navigasi halaman",
+  "lombokui.label.previous_page": "Halaman sebelumnya",
+  "lombokui.label.next_page": "Halaman berikutnya"
+}
