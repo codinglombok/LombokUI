@@ -2,6 +2,18 @@
 
 Semua perubahan penting dicatat di sini. Format mengikuti [Keep a Changelog](https://keepachangelog.com/); entri terbaru di depan. Versi mengikuti [SemVer](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+- Test end-to-end di Chromium nyata (`npm run test:browser`): tabs, accordion, menu, dialog modal native, combobox, slider dengan keyboard dan pointer sungguhan.
+- Gerbang coverage di CI (TypeScript `c8`, Python `coverage`) dan Dependabot.
+
+### Fixed
+- Adapter DOM slider: fokus tidak lagi lepas dari thumb ketika track diseret dengan pointer.
+
+### Changed
+- Semua GitHub Action di CI di-pin ke SHA commit.
+
 ## [0.1.0] - 2026-10-07
 
 ### Added

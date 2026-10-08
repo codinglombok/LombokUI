@@ -97,7 +97,7 @@ WAI-ARIA 1.2, pola WAI-ARIA APG, WCAG 2.2 (2.1.1, 2.4.3, 2.4.7, 4.1.2, 4.1.3), n
 
 - Pelipatan huruf untuk typeahead dan filter hanya ASCII; pembandingan sadar locale belum ada.
 - Belum ada submenu, menu checkbox/radio, seleksi rentang Shift, slider multi-thumb, virtualisasi, dan animasi.
-- Adapter DOM baru diuji di jsdom; belum diuji di browser nyata dan pembaca layar (lihat `docs/TECH_DEBT.md`).
+- Adapter DOM diuji di jsdom dan Chromium; Firefox, WebKit, dan pembaca layar belum (lihat `docs/TECH_DEBT.md`).
 - Gaya untuk accordion berbasis tombol, listbox, combobox, slider, dan tooltip belum ada di LombokCSS.
 - Hanya TypeScript dan Python yang memiliki kode.
 

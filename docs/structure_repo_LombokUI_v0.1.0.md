@@ -13,9 +13,10 @@ LombokUI/
     src/           index.ts contract.ts machine.ts util.ts errors.ts messages.ts
                    position.ts pagination.ts render.ts dom.ts components/*.ts
     test/          vectors.test.ts invariants.test.ts dom.test.ts docs.test.ts examples.test.ts helpers.ts
+                   browser.e2e.ts (Chromium nyata, dijalankan terpisah)
   python/          pyproject.toml  README.md  LICENSE-*  src/lombokui/  tests/test_vectors.py
   scripts/         gen-vectors.mjs  mutation-test.mjs  lombok-doctor.sh
-  .github/workflows/  ci.yml
+  .github/         workflows/ci.yml  dependabot.yml
 ```
 
 ## 2. Konvensi penamaan
