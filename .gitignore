@@ -18,3 +18,7 @@ htmlcov/
 /docs/*masterplan*.*
 /docs/*ARCHITECTURE*.*
 /docs/*MASTERPLAN*.*
+
+# CLAUDE.md: Claude Code session notes, internal only. Keep it local, like docs/.
+/CLAUDE.md
+/CLAUDE.MD
