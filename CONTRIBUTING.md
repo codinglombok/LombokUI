@@ -7,6 +7,8 @@
 ```bash
 cd typescript && npm ci && npm test        # build + vector + properti + DOM (jsdom) + dokumen
 cd .. && node scripts/gen-vectors.mjs      # setelah mengubah vector; catat sha256 baru di SPEC dan vectors/README.md
+npm run coverage                           # dari typescript/: gerbang coverage
+LUI_CHROMIUM=/path/ke/chrome npm run test:browser   # dari typescript/: alur di Chromium nyata
 node scripts/mutation-test.mjs             # semua mutan harus terbunuh
 cd python && python -m unittest discover -s tests
 bash scripts/lombok-doctor.sh LombokUI     # dari root repo

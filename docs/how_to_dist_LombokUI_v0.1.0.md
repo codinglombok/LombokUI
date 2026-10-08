@@ -2,19 +2,13 @@
 
 ## 1. Upload pertama (bootstrap)
 
-Repo `codinglombok/LombokUI` sudah dibuat kosong. Dari folder lokal berisi proyek ini:
+Alur yang berlaku untuk semua library Lombok Ecosystem:
 
-```powershell
-git init -b main
-git add -A
-git status            # periksa: docs/*architecture*, docs/*masterplan*, node_modules, dist TIDAK ikut
-git commit -m "feat: LombokUI v0.1.0"
-git remote add origin https://github.com/codinglombok/LombokUI.git
-git push -u origin main
-gh repo edit codinglombok/LombokUI --add-topic lombok-ecosystem --add-topic level-l1 --add-topic headless-ui --add-topic accessibility --add-topic wai-aria --add-topic typescript --add-topic python --description "Headless, accessible UI components: WAI-ARIA state machines, positioning, pagination, server-side rendering and a DOM adapter. Part of the Lombok Ecosystem."
-```
+1. Isi repo diserahkan sebagai ZIP (`git archive --format=zip --prefix=LombokUI/ HEAD`), tanpa `.git`, `node_modules`, dan `dist`.
+2. Pemilik mengekstrak ZIP, membuat repository lokal dengan branch `main` di GitHub Desktop, membuat commit pertama, lalu publish atau push ke `codinglombok/LombokUI`.
+3. CI di `main` diperiksa. Perbaikan berikutnya dikerjakan bersama di branch kerja dan masuk lewat PR ke `main`.
 
-Jangan membuat tag rilis pada tahap ini; lihat syarat di `TECH_DEBT.md`.
+Rilis pertama LombokUI dilakukan dengan alur ini pada 2026-10-07 (commit `c8b4310`); 13 dari 13 job CI hijau. Jangan membuat tag rilis pada tahap ini; lihat syarat di `TECH_DEBT.md`.
 
 ## 2. Alur rilis reguler
 
