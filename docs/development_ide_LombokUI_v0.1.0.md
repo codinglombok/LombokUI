@@ -5,7 +5,7 @@
 | Versi | Isi |
 |---|---|
 | 0.1.1 | Tutup syarat rilis: CI dijalankan, action di-pin SHA, coverage diukur, uji di browser nyata (Playwright: Chromium, Firefox, WebKit) dan pembaca layar (NVDA, VoiceOver) |
-| 0.2.0 | Port PHP (mesin, position, pagination, render); komponen `popover`, `select` (trigger + listbox), `toolbar`, `toggle-group`, `navigation-menu`, `drawer`; submenu; transisi lewat LombokAnimate; gaya pendamping di LombokCSS |
+| 0.2.0 | Komponen `popover`, `select` (trigger + listbox), `toolbar`, `toggle-group`, `navigation-menu`, `drawer`; submenu; transisi lewat LombokAnimate; gaya pendamping di LombokCSS |
 | 0.3.0 | Port Go dan Rust (`no_std`, WASM); `tree`, `grid` (dengan LombokVirtual), `menubar`, `date-picker` (dengan LombokCalendar), `number-field`, slider multi-thumb, command palette (filter fuzzy dari LombokAlgoritma) |
 | 0.4.0 | Ekstraksi `position` menjadi LombokPosition dan manajemen fokus menjadi LombokFocus (`map_` bagian 3); LombokUI menjadi L1 resmi |
 

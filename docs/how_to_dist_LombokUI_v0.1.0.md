@@ -20,7 +20,8 @@ Target (ADR-011): release-please membuka PR rilis; merge PR membuat tag `vX.Y.Z`
 |---|---|---|
 | npm | `lombokui` | `cd typescript && npm pack --dry-run`; publish dengan `--provenance` |
 | PyPI | `lombokui` | `cd python && python -m build` lalu `twine check dist/*`; publish dengan Trusted Publishing |
-| Packagist, Go, crates.io, Maven, NuGet | belum ada port | - |
+| Packagist | `codinglombok/lombokui` | `cd php && composer validate`; Packagist membaca versi dari tag (tanpa field `version`) |
+| Go, crates.io, Maven, NuGet | belum ada port | - |
 
 Urutan: tag, CI hijau, `npm publish --provenance --access public`, publish PyPI.
 

@@ -6,7 +6,7 @@ Tingkat **L** (label antarmuka, pesan galat, dan dokumentasi). `render` menghasi
 
 ## 2. Katalog ID pesan (normatif)
 
-Format `lombokui.<jenis>.<kode>`. Berkas katalog: `locales/<bcp47>/lombokui.json`, satu berkas untuk semua port. Port TypeScript dan Python menyematkan salinan yang diuji sama dengan berkas tersebut.
+Format `lombokui.<jenis>.<kode>`. Berkas katalog: `locales/<bcp47>/lombokui.json`, satu berkas untuk semua port. Port TypeScript, Python, dan PHP menyematkan salinan yang diuji sama dengan berkas tersebut.
 
 | ID | Teks sumber (en) | Pemakaian |
 |---|---|---|
@@ -34,7 +34,7 @@ Core-20: 2 dari 20 (`en`, `id`). Paket Nusantara: 0 dari 6. Bahasa lain belum ad
 
 1. Salin `locales/en/lombokui.json` ke `locales/<bcp47>/lombokui.json`.
 2. Terjemahkan nilai; kunci tidak diubah.
-3. Tambahkan katalog yang sama ke `typescript/src/messages.ts` dan `python/src/lombokui/_messages.py` (test memeriksa kesamaannya).
+3. Tambahkan katalog yang sama ke `typescript/src/messages.ts`, `python/src/lombokui/_messages.py`, dan `php/src/Messages.php` (test memeriksa kesamaannya).
 4. Minta tinjauan penutur asli, lalu ajukan PR.
 
 ## 6. Ketergantungan LombokLocale

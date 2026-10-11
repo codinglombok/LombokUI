@@ -46,6 +46,26 @@ jobs:
         run: python -m pip install build && python -m build && python -m pip install dist/*.whl && python -c "import lombokui; print(lombokui.VERSION)"
         working-directory: python
         shell: bash
+  php:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        php: ["8.1", "8.3"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: shivammathur/setup-php@b604ade2a87db23f8871b7182e69ec5e75effb45 # v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mbstring, json
+          coverage: none
+      - run: composer validate --no-check-publish
+        working-directory: php
+      - run: php tests/run_vectors.php
+        working-directory: php
+      - run: php tests/examples.php
+        working-directory: php
   vectors:
     runs-on: ubuntu-latest
     steps:

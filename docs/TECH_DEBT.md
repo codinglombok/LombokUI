@@ -6,13 +6,13 @@ Format: ID, temuan, prioritas, perbaikan, status. Prioritas P1 memblokir rilis m
 |---|---|---|---|---|
 | TD-01 | Action di `ci.yml` belum di-pin SHA; Dependabot belum dikonfigurasi | P0 | Semua action di-pin ke SHA commit; `.github/dependabot.yml` untuk github-actions, npm, pip | CLOSED |
 | TD-02 | Reusable workflow `codinglombok/.github` belum ada (TD-P0-08 ekosistem); doctor dijalankan dari salinan `scripts/lombok-doctor.sh` yang diperluas agar membaca SPDX dari `typescript/package.json` dan `python/pyproject.toml` | P0 | Pakai workflow bersama setelah tersedia dan usulkan perluasan yang sama ke skrip induk | OPEN |
-| TD-03 | Adapter DOM sudah diuji di Chromium nyata (`test/browser.e2e.ts`, job CI `browser`); Firefox, WebKit, dan pembaca layar belum | P1 | Tambah Firefox dan WebKit; uji manual NVDA dan VoiceOver | OPEN |
+| TD-03 | Adapter DOM sudah diuji di Chromium nyata (`test/browser.e2e.ts`, job CI `browser`); Firefox, WebKit, dan pembaca layar belum (unduhan browser tersebut tidak tersedia di lingkungan pengembangan saat ini, sehingga belum dapat diverifikasi sebelum push) | P1 | Tambah Firefox dan WebKit di CI; uji manual NVDA dan VoiceOver | OPEN |
 | TD-04 | Coverage belum diukur; target 90% | P1 | Job CI `coverage`: TypeScript 96,4% baris dan 91,8% cabang (gerbang 95/95/90), Python 97% (gerbang 95) | CLOSED |
 | TD-05 | Fuzz berupa pseudo-fuzz berbenih; LombokFuzzer belum dipakai | P1 | Target fuzz untuk `call` | OPEN |
-| TD-06 | Hanya TypeScript dan Python; PHP, Go, Rust BELUM | P1 | Rencana 0.2.0 dan 0.3.0 | OPEN |
+| TD-06 | Port PHP sudah ada (366/366 vector); Go dan Rust BELUM | P1 | Rencana 0.3.0 | OPEN |
 | TD-07 | Gaya LombokCSS untuk accordion berbasis tombol, listbox, combobox, slider, tooltip, dan toast per jenis belum ada | P1 | PR ke LombokCSS (`map_` bagian 2) | OPEN |
-| TD-08 | Kasus regresi (188) berekspektasi dari TypeScript dan dikonfirmasi Python; hanya 178 golden yang independen | P3 | Tinjau manual sebagian kasus regresi | OPEN |
-| TD-09 | Salinan `LICENSE-*` di `python/` | P3 | Otomatiskan salinan saat rilis | OPEN |
+| TD-08 | Kasus regresi (188) berekspektasi dari TypeScript dan dikonfirmasi Python dan PHP; hanya 178 golden yang independen | P3 | Tinjau manual sebagian kasus regresi | OPEN |
+| TD-09 | Salinan `LICENSE-*` di `python/` dan `php/` | P3 | Otomatiskan salinan saat rilis | OPEN |
 | TD-10 | Kinerja belum diukur (daftar 1000 item, render besar) | P2 | Benchmark sederhana per port | OPEN |
 | TD-11 | Pelipatan huruf hanya ASCII | P2 | Pakai LombokLocale setelah API tersedia | OPEN |
 

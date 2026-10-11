@@ -1,0 +1,19 @@
+{
+  "name": "codinglombok/lombokui",
+  "description": "Headless, accessible UI components: WAI-ARIA state machines, floating-element positioning, pagination and server-side rendering with LombokCSS class names. Zero dependencies. Part of the Lombok Ecosystem.",
+  "type": "library",
+  "license": "(Apache-2.0 OR MIT)",
+  "keywords": ["headless-ui", "accessibility", "wai-aria", "state-machine", "ssr", "components", "lombok-ecosystem"],
+  "homepage": "https://github.com/codinglombok/LombokUI",
+  "require": {
+    "php": ">=8.1",
+    "ext-mbstring": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "files": ["src/LombokUI.php"]
+  },
+  "scripts": {
+    "test": "php tests/run_vectors.php && php tests/examples.php"
+  }
+}

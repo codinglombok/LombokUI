@@ -11,6 +11,7 @@ npm run coverage                           # dari typescript/: gerbang coverage
 LUI_CHROMIUM=/path/ke/chrome npm run test:browser   # dari typescript/: alur di Chromium nyata
 node scripts/mutation-test.mjs             # semua mutan harus terbunuh
 cd python && python -m unittest discover -s tests
+cd ../php && php tests/run_vectors.php && php tests/examples.php
 bash scripts/lombok-doctor.sh LombokUI     # dari root repo
 ```
 

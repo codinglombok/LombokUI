@@ -40,13 +40,13 @@ test("doctor-lite: built-in catalogs equal locales/ and Lang_ lists every key", 
 });
 
 test("doctor-lite: licenses are real texts and match the SPDX expression", () => {
-  for (const f of ["LICENSE-APACHE", "LICENSE-MIT", "python/LICENSE-APACHE", "python/LICENSE-MIT"]) assert.ok(readFileSync(join(ROOT, f)).length >= 1000, f);
+  for (const f of ["LICENSE-APACHE", "LICENSE-MIT", "python/LICENSE-APACHE", "python/LICENSE-MIT", "php/LICENSE-APACHE", "php/LICENSE-MIT"]) assert.ok(readFileSync(join(ROOT, f)).length >= 1000, f);
   assert.equal(JSON.parse(readRepo("typescript/package.json")).license, "Apache-2.0 OR MIT");
   assert.match(readRepo("python/pyproject.toml"), /license = "Apache-2\.0 OR MIT"/);
 });
 
 test("doctor-lite (ADR-019): application names appear only in map_", () => {
-  const files = ["README.md", "CHANGELOG.md", "SECURITY.md", "CONTRIBUTING.md", "vectors/README.md", "docs/TECH_DEBT.md", "python/README.md"];
+  const files = ["README.md", "CHANGELOG.md", "SECURITY.md", "CONTRIBUTING.md", "vectors/README.md", "docs/TECH_DEBT.md", "python/README.md", "php/README.md"];
   for (const d of DOCS) if (d !== "map") files.push(`docs/${d}_${LIB}_v${version}.md`);
   const apps = /Clarion|RAG[A-Za-z]*|DocFlow|LombokPDF|AgenticAuto|LombokMiner|DNSProxy/;
   for (const f of files) assert.ok(!apps.test(readRepo(f)), `application name in ${f}`);
@@ -72,7 +72,7 @@ test("doctor-lite (style): every tracked text file is ASCII-only", () => {
   } catch {
     return;
   }
-  const text = /\.(md|ts|py|mjs|js|json|yml|yaml|toml|txt|sh)$|^\.git(ignore|attributes)$/;
+  const text = /\.(md|ts|py|php|mjs|js|json|yml|yaml|toml|txt|sh)$|^\.git(ignore|attributes)$/;
   for (const f of tracked.filter((x) => text.test(x))) {
     const s = readFileSync(join(ROOT, f), "utf8");
     const m = /[^\x00-\x7f]/.exec(s);

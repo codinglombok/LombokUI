@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache--2.0%20OR%20MIT-blue)](LICENSE-APACHE)
 
-Komponen UI **headless dan aksesibel** dengan kontrak lintas bahasa: 13 mesin state komponen mengikuti pola WAI-ARIA APG, penempatan elemen mengambang, model pagination, render HTML di server dengan nama kelas LombokCSS, dan adapter DOM yang menghidrasi markup tersebut di browser. Tanpa dependensi runtime. Perilaku TypeScript dan Python identik dan dibuktikan dengan vector bersama.
+Komponen UI **headless dan aksesibel** dengan kontrak lintas bahasa: 13 mesin state komponen mengikuti pola WAI-ARIA APG, penempatan elemen mengambang, model pagination, render HTML di server dengan nama kelas LombokCSS, dan adapter DOM yang menghidrasi markup tersebut di browser. Tanpa dependensi runtime. Perilaku TypeScript, Python, dan PHP identik dan dibuktikan dengan vector bersama.
 
 Part of the [Lombok Ecosystem](https://github.com/codinglombok).
 
@@ -17,7 +17,7 @@ Komponen interaktif yang benar (fokus, keyboard, atribut ARIA) sulit ditulis dan
 
 Skenario pemakaian:
 
-- **Aplikasi web dengan render server** (Python, dan bahasa lain setelah port tersedia): menulis tabs, accordion, dialog, menu, breadcrumb, dan pagination yang langsung aksesibel.
+- **Aplikasi web dengan render server** (Python, PHP, dan bahasa lain setelah port tersedia): menulis tabs, accordion, dialog, menu, breadcrumb, dan pagination yang langsung aksesibel.
 - **Single-page app tanpa framework**: `lombokui/dom` cukup untuk dialog modal, menu, combobox, tooltip, dan toast.
 - **Framework komponen sendiri**: memakai mesin sebagai inti perilaku dan menulis tampilan sendiri.
 - **Pengujian aksesibilitas**: memutar skrip event dan memeriksa atribut ARIA tanpa browser.
@@ -26,7 +26,7 @@ Contoh dependen lain di ekosistem Lombok dicantumkan di `docs/map_LombokUI_v0.1.
 
 ## Fitur
 
-Setiap fitur di bawah ini dicakup vector di `vectors/` dan test di kedua port.
+Setiap fitur di bawah ini dicakup vector di `vectors/` dan test di setiap port.
 
 - Komponen: `disclosure`, `accordion`, `tabs`, `listbox`, `menu`, `combobox`, `dialog`, `checkbox`, `switch`, `radiogroup`, `slider`, `tooltip`, `toast`.
 - Keyboard menurut APG: roving tabindex, `aria-activedescendant`, Home/End, loop, arah `rtl`, typeahead dengan timeout.
@@ -42,6 +42,7 @@ Belum terbit di registry. Setelah rilis pertama:
 ```bash
 npm install lombokui      # TypeScript / JavaScript
 pip install lombokui      # Python
+composer require codinglombok/lombokui   # PHP
 ```
 
 ## Quick Start
@@ -70,6 +71,14 @@ html = lombokui.render("tabs", {"idBase": "t", "items": [
 ]})
 ```
 
+### PHP: render di server
+
+```php
+use Lombok\UI\LombokUI;
+
+echo LombokUI::render('menu', ['idBase' => 'aksi', 'label' => 'Aksi', 'items' => [['id' => 'ubah', 'label' => 'Ubah'], ['id' => 'hapus', 'label' => 'Hapus']]]);
+```
+
 ### Browser: hidrasi
 
 ```ts
@@ -84,7 +93,8 @@ hydrate(document); // semua [data-lui] menjadi interaktif
 |---|---|---|
 | TypeScript | YA, lulus vector | `typescript/test/vectors.test.ts` menjalankan seluruh vector; ditambah test properti, alur DOM (jsdom), dan uji mutasi |
 | Python | YA, lulus vector | `python/tests/test_vectors.py` menjalankan seluruh vector |
-| PHP, Go, Rust | BELUM | Direncanakan (`docs/development_ide_LombokUI_v0.1.0.md`) |
+| PHP (8.1+) | YA, lulus vector | `php/tests/run_vectors.php` menjalankan seluruh vector dan memeriksa string `render` byte demi byte |
+| Go, Rust | BELUM | Direncanakan (`docs/development_ide_LombokUI_v0.1.0.md`) |
 | Java, Kotlin, C#, C/C++, Swift, Perl | BELUM | Tidak direncanakan pada 0.x |
 
 Vector: 366 kasus (178 golden berekspektasi tulis tangan, 188 regresi hasil pembangkit; 1791 langkah event).
@@ -99,7 +109,7 @@ WAI-ARIA 1.2, pola WAI-ARIA APG, WCAG 2.2 (2.1.1, 2.4.3, 2.4.7, 4.1.2, 4.1.3), n
 - Belum ada submenu, menu checkbox/radio, seleksi rentang Shift, slider multi-thumb, virtualisasi, dan animasi.
 - Adapter DOM diuji di jsdom dan Chromium; Firefox, WebKit, dan pembaca layar belum (lihat `docs/TECH_DEBT.md`).
 - Gaya untuk accordion berbasis tombol, listbox, combobox, slider, dan tooltip belum ada di LombokCSS.
-- Hanya TypeScript dan Python yang memiliki kode.
+- Hanya TypeScript, Python, dan PHP yang memiliki kode; adapter DOM hanya TypeScript.
 
 ## Ekosistem Lombok
 

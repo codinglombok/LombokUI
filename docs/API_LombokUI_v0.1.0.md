@@ -56,10 +56,28 @@ Event DOM yang dipancarkan pada akar komponen: `lui:change` (`{ name, value }`),
 
 Nama kunci opsi, event, state, dan props sama dengan TypeScript (camelCase, misalnya `idBase`, `typeaheadTimeout`) karena merupakan data kontrak.
 
-## 4. Port lain
+## 4. PHP (paket Composer `codinglombok/lombokui`, namespace `Lombok\UI`)
+
+| Simbol | Keterangan |
+|---|---|
+| `LombokUI::call(string $fn, array $args)` | Titik masuk kontrak |
+| `LombokUI::run`, `LombokUI::attrs` | SPEC 4 |
+| `LombokUI::createMachine(string $component, $options = null)`, `Machine` | `state()`, `send($event)`, `attrs()`, `subscribe(callable)` |
+| `LombokUI::position`, `LombokUI::pagination` (juga `Layout::...`) | SPEC 6 dan 7; `Layout::PLACEMENTS` |
+| `LombokUI::render(string $component, $props = null)` (juga `Render::render`) | SPEC 8; `Render::RENDERABLE` |
+| `Render::escapeText`, `Render::escapeAttr`, `Render::safeUrl` | SPEC 8.1, 8.3 |
+| `Util::keyMove`, `Util::navigate`, `Util::typeahead`, `Util::fold`, `Util::isCharKey` | SPEC 3 |
+| `Messages::CATALOGS`, `Messages::LABEL_KEYS`, `Messages::resolveLocale` | |
+| `LombokUIError` | `errorCode`, `messageId` (`code` milik `Exception` bawaan PHP tidak dipakai) |
+| `Machines::get`, `Machines::names` | Registri komponen |
+| `LombokUI::VERSION` | `"0.1.0"` |
+
+Objek masukan boleh berupa array asosiatif atau `stdClass`; array kosong `[]` dianggap daftar, bukan objek. Hasil berupa array PHP.
+
+## 5. Port lain
 
 Belum ada.
 
-## 5. Kompatibilitas lintas bahasa
+## 6. Kompatibilitas lintas bahasa
 
-Untuk masukan yang sama, TypeScript dan Python menghasilkan keluaran identik pada seluruh vector (366 kasus); string `render` identik byte demi byte.
+Untuk masukan yang sama, TypeScript, Python, dan PHP menghasilkan keluaran identik pada seluruh vector (366 kasus); string `render` identik byte demi byte.

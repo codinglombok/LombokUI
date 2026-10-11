@@ -14,7 +14,7 @@ Lihat README (bagian Fitur). Semua fitur dicakup vector.
 
 ## Status saat ini
 
-Kode lengkap untuk TypeScript dan Python; lulus 366 kasus vector di kedua port; adapter DOM lulus test jsdom; belum terbit di registry; belum memenuhi aturan skor rilis (lihat `TECH_DEBT.md`).
+Kode lengkap untuk TypeScript, Python, dan PHP; lulus 366 kasus vector di ketiga port; adapter DOM lulus test jsdom; belum terbit di registry; belum memenuhi aturan skor rilis (lihat `TECH_DEBT.md`).
 
 ## Contoh pemakai
 
@@ -26,7 +26,7 @@ Lihat README (skenario pemakaian) dan `map_` bagian 4.
 - Komponen 0.1.0 belum mencakup popover, select, menubar, tree, grid, date picker, dan submenu.
 - Adapter DOM belum diuji di browser nyata maupun pembaca layar; belum audit aksesibilitas pihak ketiga.
 - Gaya LombokCSS untuk sebagian komponen (accordion berbasis tombol, listbox, combobox, slider, tooltip) belum ada.
-- Hanya dua port (TypeScript, Python); fuzz berupa pseudo-fuzz; coverage belum diukur.
+- Tiga port (TypeScript, Python, PHP), belum Go dan Rust; fuzz berupa pseudo-fuzz; coverage belum diukur.
 
 ## Info lanjut
 
