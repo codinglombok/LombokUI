@@ -511,6 +511,8 @@ export function mount(root: HTMLElement, component?: string, opts: MountOptions 
       };
       let dragging = false;
       on(track, "pointerdown", (e: PointerEvent) => {
+        // Without this the browser's default mousedown handling moves focus away from the thumb.
+        e.preventDefault();
         dragging = true;
         thumb?.focus();
         fromPointer(e);

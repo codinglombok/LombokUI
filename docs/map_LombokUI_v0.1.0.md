@@ -74,7 +74,7 @@ Bagian ini satu-satunya tempat nama aplikasi atau framework boleh muncul (ADR-01
 
 | Pemakai | Jenis | Pemakaian | Status integrasi |
 |---|---|---|---|
-| LombokClarion | Framework PHP | Komponen panel admin dengan SSR | rencana; menunggu port PHP (0.2) |
+| LombokClarion | Framework PHP | Komponen panel admin dengan SSR | rencana; port PHP sudah tersedia |
 | LombokRAGDash | Aplikasi | Dialog, menu, toast, tabs dasbor | rencana |
 | LombokDocFlow | Aplikasi | Antarmuka penyunting dokumen (popover, combobox) | rencana |
 | LombokCharts | Library | Tooltip grafik lewat `position` | rencana |
@@ -84,17 +84,17 @@ Bagian ini satu-satunya tempat nama aplikasi atau framework boleh muncul (ADR-01
 
 | Fitur | TypeScript | Python | PHP | Go | Rust |
 |---|---|---|---|---|---|
-| 13 mesin komponen (SPEC 5) | YA | YA | rencana 0.2 | rencana 0.3 | rencana 0.3 (`no_std`, WASM) |
-| position, pagination (SPEC 6-7) | YA | YA | rencana 0.2 | rencana 0.3 | rencana 0.3 |
-| render SSR (SPEC 8) | YA | YA | rencana 0.2 | rencana 0.3 | - |
+| 13 mesin komponen (SPEC 5) | YA | YA | YA | rencana 0.3 | rencana 0.3 (`no_std`, WASM) |
+| position, pagination (SPEC 6-7) | YA | YA | YA | rencana 0.3 | rencana 0.3 |
+| render SSR (SPEC 8) | YA | YA | YA | rencana 0.3 | - |
 | adapter DOM (SPEC 9) | YA | - | - | - | - |
-| vector | 366/366 | 366/366 | - | - | - |
+| vector | 366/366 | 366/366 | 366/366 | - | - |
 
 Mesin komponen dan position tidak bergantung pada DOM, sehingga juga dapat menggerakkan UI native (Kotlin/Compose, Swift/SwiftUI) sebagai sumber state aksesibilitas; port tersebut belum direncanakan.
 
 ## 6. Jalur kontrak normatif
 
-`docs/SPEC_LombokUI_v0.1.0.md` -> `vectors/lombokui-vectors-v1.json` (sha256 di SPEC) -> runner `typescript/test/vectors.test.ts` dan `python/tests/test_vectors.py`.
+`docs/SPEC_LombokUI_v0.1.0.md` -> `vectors/lombokui-vectors-v1.json` (sha256 di SPEC) -> runner `typescript/test/vectors.test.ts`, `python/tests/test_vectors.py`, dan `php/tests/run_vectors.php`.
 
 ## 7. Peta folder
 
